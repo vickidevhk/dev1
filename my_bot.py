@@ -22,10 +22,6 @@ def send_mess(chat, text):
     response = requests.post(url + 'sendMessage', data=params)
     return response
 
-chat_id = get_chat_id(last_update(get_updates_json(url)))
-
-send_mess(chat_id, 'Your message goes here')
-
 def main():  
     update_id = last_update(get_updates_json(url))['update_id']
     while True:
